@@ -1,0 +1,33 @@
+name: che1147_group_14
+channels:
+  - pyg
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda
+
+  - pyg
+  - pytorch-scatter
+  - pytorch-sparse
+  - pytorch-cluster
+  - pytorch-spline-conv
+
+  - rdkit
+  - xgboost
+  - shap
+  - scikit-learn
+
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - tqdm
+  - joblib
+
+  - pip
