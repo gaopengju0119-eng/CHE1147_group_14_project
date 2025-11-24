@@ -1288,7 +1288,7 @@ print("✅ SHAP values calculated successfully.")
 # - X-axis: Impact on Heat Capacity (Positive = Increases Cv, Negative = Decreases Cv).
 print("\n--- 1. Global Feature Importance (Beeswarm) ---")
 plt.figure(figsize=(12, 8))
-plt.title("Global Feature Impact on Heat Capacity (Cv)", fontsize=16)
+plt.title("Global Feature Impact on Heat Capacity (Cv)", fontsize=20)
 
 shap.plots.beeswarm(
     shap_values,
@@ -1296,6 +1296,9 @@ shap.plots.beeswarm(
     show=False,
     plot_size=(12, 6)
 )
+plt.xticks(fontsize=16)
+plt.subplots_adjust(left=0.30, right=0.95, top=0.9, bottom=0.1)
+
 plt.show()
 
 # --- 5. LOCAL Interpretation (Waterfall Plot) ---
@@ -1304,14 +1307,17 @@ plt.show()
 print("\n--- 2. Local Prediction Explanation (Molecule #0) ---")
 print(f"Actual Prediction: {model_to_explain.predict(data_for_shap.iloc[[0]])[0]:.4f}")
 
-plt.figure(figsize=(10, 6))
-plt.title(f"Why did the model predict this value for Molecule 0?", fontsize=14)
+plt.figure(figsize=(12, 6))
+plt.title(f"Why did the model predict this value for Molecule 0?", fontsize=18)
 
 shap.plots.waterfall(
     shap_values[0],
     max_display=10,
     show=False
 )
+plt.xticks(fontsize=16)
+plt.subplots_adjust(left=0.3, right=0.95, top=0.9, bottom=0.1)
+
 plt.show()
 
 # --- 6. Scientific Interpretation Guide ---
@@ -1413,11 +1419,13 @@ plt.figure(figsize=(16, 7))
 plt.subplot(1, 2, 1)
 plt.scatter(y_test, y_pred_mean, alpha=0.6, c='#2b7bba', s=15, edgecolor='k', linewidth=0.3)
 plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2, label='Ideal (y=x)')
-plt.xlabel("Actual Heat Capacity ($C_v$)", fontsize=12)
-plt.ylabel("Predicted Mean $C_v$", fontsize=12)
-plt.title(f"Parity Plot: Accuracy\n$R^2$: {r2_score(y_test, y_pred_mean):.4f}", fontsize=14)
-plt.legend()
+plt.xlabel("Actual Heat Capacity ($C_v$)", fontsize=18)
+plt.ylabel("Predicted Mean $C_v$", fontsize=18)
+plt.title(f"Parity Plot: Accuracy\n$R^2$: {r2_score(y_test, y_pred_mean):.4f}", fontsize=20)
+plt.legend(fontsize=16)
 plt.grid(True, alpha=0.3)
+plt.xticks(fontsize=16)
+plt.yticks(fontsize=16)
 
 # Plot B: Uncertainty Calibration (Trustworthiness)
 # "Does the model KNOW when it's likely to be wrong?"
@@ -1430,10 +1438,12 @@ sns.regplot(
     scatter_kws={'alpha':0.5, 'color':'darkorange', 's':20},
     line_kws={'color':'red', 'lw':2}
 )
-plt.xlabel("Predicted Uncertainty ($\\sigma_{ensemble}$)", fontsize=12)
-plt.ylabel("Absolute Prediction Error ($|y - \\hat{y}|$)", fontsize=12)
-plt.title(f"Uncertainty Calibration\nPearson Correlation: {correlation:.3f}", fontsize=14)
+plt.xlabel("Predicted Uncertainty ($\\sigma_{ensemble}$)", fontsize=20)
+plt.ylabel("Absolute Prediction Error ($|y - \\hat{y}|$)", fontsize=20)
+plt.title(f"Uncertainty Calibration\nPearson Correlation: {correlation:.3f}", fontsize=18)
 plt.grid(True, alpha=0.3)
+plt.xticks(fontsize=16)
+plt.yticks(fontsize=16)
 
 plt.tight_layout()
 plt.show()
