@@ -11,7 +11,7 @@ We predicted the **Heat Capacity ($C_v$)** using the **QM9 dataset**.
 
 **Key Highlights:**
 * Result (outputs and figures) are shown in **CHE1147_Group14.ipynb**
-* You can also open it on Colab (containing output and figures): https://colab.research.google.com/drive/1JpOU4Ce4eg8XFI477AFu9eXqG6d6VAQJ#scrollTo=EliGDh4MKQyE
+* You can also open it on **Colab** (containing output and figures): https://colab.research.google.com/drive/1JpOU4Ce4eg8XFI477AFu9eXqG6d6VAQJ#scrollTo=EliGDh4MKQyE
 * **Data:** QM9 dataset.
 * **Methods:** kNN as baseline,  compared Ridge, XGBoost, Random Forest.
 * **Feature selection:** from 21 to 10 features.
