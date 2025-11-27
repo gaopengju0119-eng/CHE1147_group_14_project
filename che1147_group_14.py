@@ -145,6 +145,10 @@ for i in range(num_rows_to_show):
 # from rdkit import Chem, Descriptors
 # from tqdm.auto import tqdm
 
+# ignore some output
+from rdkit import RDLogger
+RDLogger.DisableLog('rdApp.*')
+
 # Map QM9 edge attributes (0-3) to RDKit BondTypes
 BOND_TYPE_MAP = {
     0: Chem.BondType.SINGLE,
