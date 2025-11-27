@@ -27,7 +27,7 @@ We predicted the **Heat Capacity ($C_v$)** using the **QM9 dataset**.
 1. **Create the environment (on terminal):** conda env create -f environment.yml
 2. **Activate the environment (on terminal):** conda activate che1147_group_14
 3. **Set Python Interpreter to 'che1147_group_14'**
-4. **Run the script:** python CHE1147_Group14.py
+4. **Run the script:** python che1147_group_14.py
 
 ---
 
