@@ -91,9 +91,7 @@ dataset = QM9(root=dataset_path)
 # --- Basic Dataset Inspection ---
 # Always verify the shape of your data immediately after loading (EDA Best Practice)
 print(f"\n✅ Dataset Loaded Successfully!")
-print(f"Dataset Name: {dataset.name}")
 print(f"Total Molecules: {len(dataset)}")
-print(f"Number of Features per Atom: {dataset.num_features}")
 print(f"Number of Target Properties: {dataset.num_classes}")
 
 # Display the first molecule to understand the data structure
